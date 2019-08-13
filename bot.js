@@ -1,22 +1,20 @@
-var Twit = require('twit');
-var config = require('./twit-config')
+const Twit = require('twit');
+const config = require('./twit-config')
+const fetch = require('node-fetch')
+const T = new Twit(config)
 
-var T = new Twit(config)
-// T.get('search/tweets', { q: 'banana since:2011-07-11', count: 2 }, function (err, data, response) {
-//     for (let index = 0; index < data.statuses.length; index++) {
-//         console.log(data.statuses[index].text)
-//     }
-// })
-function callback(err, data, response) {
-    console.log(data.errors)
+async function postIt(data) {
+    console.log(data)
+    data ? T.post('statuses/update', { status: data }) : console.log('no data')
 }
 
-function postIt() {
-    var rand = Math.floor(Math.random() * 100)
-    T.post('statuses/update', { status: 'my lucky number is: ' + rand }, callback)
-    console.log(rand)
+async function getDataAndPostIt() {
+    const response = await fetch('https://api.quotable.io/random')
+    const json = await response.json()
+    await postIt(json.content)
 }
+setInterval(getDataAndPostIt, 1000 * 10)
 
-setInterval(() => {
-    postIt()
-}, 1000 * 5);
+// getDataAndPostIt()
+
+
