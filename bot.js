@@ -15,7 +15,7 @@ async function getDataAndPostIt() {
     await postIt(json.content)
 }
 
-setInterval(getDataAndPostIt, 1000 * 60)
+setInterval(getDataAndPostIt, 1000 * 60 * 180)
 
 // getDataAndPostIt()
 
