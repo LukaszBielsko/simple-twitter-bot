@@ -1,6 +1,7 @@
 const Twit = require('twit');
 const config = require('./twit-config')
 const fetch = require('node-fetch')
+
 const T = new Twit(config)
 
 async function postIt(data) {
@@ -13,7 +14,8 @@ async function getDataAndPostIt() {
     const json = await response.json()
     await postIt(json.content)
 }
-setInterval(getDataAndPostIt, 1000 * 10)
+
+setInterval(getDataAndPostIt, 1000 * 60)
 
 // getDataAndPostIt()
 
