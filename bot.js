@@ -17,6 +17,6 @@ async function getDataAndPostIt() {
 
 setInterval(getDataAndPostIt, 1000 * 60 * 180)
 
-// getDataAndPostIt()
+
 
 
