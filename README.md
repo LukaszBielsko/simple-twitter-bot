@@ -6,7 +6,7 @@ incredibly simple node twitter bot
 2. `npm install`
 3. Create twitter account.
 4. Apply for dev accout on twitter
-5. Set up your application
+5. Set up your application on dev.twitter.com
 6. Get your tokens
 7. Create file **twit-config.js** open it and add this code:
     ```
