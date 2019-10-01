@@ -20,4 +20,4 @@ incredibly simple node twitter bot
     }
     ```
 8. `npm start` to start locally or deploy to heroku (or sth else)
-9. Wait for 3 hours and check your twitter dashboard 😆
+9. Wait for 3 hours (or longer, or shorter - it's up to your settings) and check your twitter dashboard 😆
